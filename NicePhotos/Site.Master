@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NicePhotos.SiteMaster" %>
+
+<!DOCTYPE html>
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Vestibule 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130406
+
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>NicePhotos ltd.</title>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/UI_theme/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.ui.message.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div id="msg"></div>
+
+        <div id="wrapper">
+	        <div id="menu-wrapper">
+		        <div id="menu" class="container">
+			        <!--<ul>
+				        <li><class="current_page_item"<a href="/default.aspx">Homepage</a></li>
+				        <li><a href="#">Browse Albums</a></li>
+				        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Friends</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Admin</a></li>
+			        </ul>-->
+
+                    <asp:Repeater id="repMenu" runat="server">
+                        <headertemplate>
+                            <ul>
+                        </headertemplate>
+                        <itemtemplate>
+                            <li><a href='<%# Eval("Path") %>'><%# Eval("Name") %></a></li>
+                        </itemtemplate>
+                        <footertemplate>
+                            </ul>
+                        </footertemplate>
+                    </asp:Repeater>
+
+                    <div style="position:fixed;right:0;top:0;right:5px;">
+                        <asp:Label ID="lblCurrentUser" runat="server" Text=" ">Guest</asp:Label>
+                        <asp:Button ID="btnLogInOrOut" runat="server" Text="Log In/Out" 
+                            CssClass="buttonAlternative" />
+                    </div>
+		        </div>
+	        </div>
+	        <div id="logo" class="container">
+		        <h1><asp:HyperLink ID="hlTitle" runat="server">NicePhotos ltd.</asp:HyperLink></h1>
+		        <p>Share a shot!</p>
+	        </div>
+	        <div id="page" class="container">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+        </div>
+        <div id="footer">
+	        <p>© 2013 Conrad Cassar. Design by <a href="http://www.freecsstemplates.org">FCT</a>.  Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+        </div>
+    </form>
+</body>
+</html>

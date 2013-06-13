@@ -1,0 +1,1376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NicePhotosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NicePhotosModelStoreContainer">
+          <EntitySet Name="Account" EntityType="NicePhotosModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Account_Image" EntityType="NicePhotosModel.Store.Account_Image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Account_Role" EntityType="NicePhotosModel.Store.Account_Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Album" EntityType="NicePhotosModel.Store.Album" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Album_Fiend" EntityType="NicePhotosModel.Store.Album_Fiend" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AvailabilityType" EntityType="NicePhotosModel.Store.AvailabilityType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comment" EntityType="NicePhotosModel.Store.Comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Friend" EntityType="NicePhotosModel.Store.Friend" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Image" EntityType="NicePhotosModel.Store.Image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImageReport" EntityType="NicePhotosModel.Store.ImageReport" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Logs" EntityType="NicePhotosModel.Store.Logs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MenuItem" EntityType="NicePhotosModel.Store.MenuItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NiceCommision" EntityType="NicePhotosModel.Store.NiceCommision" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="NicePhotosModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role_MenuItem" EntityType="NicePhotosModel.Store.Role_MenuItem" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Account_Image_Account" Association="NicePhotosModel.Store.FK_Account_Image_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Account_Image" EntitySet="Account_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Image_Image" Association="NicePhotosModel.Store.FK_Account_Image_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="Account_Image" EntitySet="Account_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Role_Account" Association="NicePhotosModel.Store.FK_Account_Role_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Account_Role" EntitySet="Account_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Role_Role" Association="NicePhotosModel.Store.FK_Account_Role_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Account_Role" EntitySet="Account_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Account" Association="NicePhotosModel.Store.FK_Album_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_AvailabilityType" Association="NicePhotosModel.Store.FK_Album_AvailabilityType">
+            <End Role="AvailabilityType" EntitySet="AvailabilityType" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Fiend_Album" Association="NicePhotosModel.Store.FK_Album_Fiend_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Album_Fiend" EntitySet="Album_Fiend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Fiend_Album_Fiend" Association="NicePhotosModel.Store.FK_Album_Fiend_Album_Fiend">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Album_Fiend" EntitySet="Album_Fiend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Account" Association="NicePhotosModel.Store.FK_Comment_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Album" Association="NicePhotosModel.Store.FK_Comment_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friend_Account" Association="NicePhotosModel.Store.FK_Friend_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Friend" EntitySet="Friend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friend_Account1" Association="NicePhotosModel.Store.FK_Friend_Account1">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Friend" EntitySet="Friend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_Album" Association="NicePhotosModel.Store.FK_Image_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Image" EntitySet="Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageReport_Account" Association="NicePhotosModel.Store.FK_ImageReport_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ImageReport" EntitySet="ImageReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageReport_Image" Association="NicePhotosModel.Store.FK_ImageReport_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="ImageReport" EntitySet="ImageReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceCommision_Account_Image" Association="NicePhotosModel.Store.FK_NiceCommision_Account_Image">
+            <End Role="Account_Image" EntitySet="Account_Image" />
+            <End Role="NiceCommision" EntitySet="NiceCommision" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_MenuItem_MenuItem" Association="NicePhotosModel.Store.FK_Role_MenuItem_MenuItem">
+            <End Role="MenuItem" EntitySet="MenuItem" />
+            <End Role="Role_MenuItem" EntitySet="Role_MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_MenuItem_Role" Association="NicePhotosModel.Store.FK_Role_MenuItem_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Role_MenuItem" EntitySet="Role_MenuItem" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Credits" Type="int" Nullable="false" />
+          <Property Name="VerificationCode" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AboutMe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PrivateKey" Type="nvarchar(max)" />
+          <Property Name="ApiKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account_Image">
+          <Key>
+            <PropertyRef Name="AccountImageId" />
+          </Key>
+          <Property Name="AccountImageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="ImageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account_Role">
+          <Key>
+            <PropertyRef Name="AccountRoleId" />
+          </Key>
+          <Property Name="RoleId" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="AccountRoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Name="AlbumId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AlbumName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Owner" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Availability" Type="int" Nullable="false" />
+          <Property Name="Removed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Album_Fiend">
+          <Key>
+            <PropertyRef Name="AlbumFriendId" />
+          </Key>
+          <Property Name="AlbumFriendId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AlbumId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendAccount" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="AvailabilityType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Album" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="15" />
+          <Property Name="Flagged" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Name="FriendId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Friend" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Album" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImageName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageDescruption" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+          <Property Name="Removed" Type="bit" Nullable="false" />
+          <Property Name="FileExtension" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="DigitalSignature" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageReport">
+          <Key>
+            <PropertyRef Name="ImageReportId" />
+          </Key>
+          <Property Name="ImageReportId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Image" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="DetailsBeforeModification" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="MenuItem">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ItemLink" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="NiceCommision">
+          <Key>
+            <PropertyRef Name="NiceCommisionId" />
+          </Key>
+          <Property Name="NiceCommisionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BuyerRecord" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Commision" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Role_MenuItem">
+          <Key>
+            <PropertyRef Name="RoleItemId" />
+          </Key>
+          <Property Name="RoleItemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Item" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Account_Image_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Account_Image" Type="NicePhotosModel.Store.Account_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Account_Image">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Image_Image">
+          <End Role="Image" Type="NicePhotosModel.Store.Image" Multiplicity="1" />
+          <End Role="Account_Image" Type="NicePhotosModel.Store.Account_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="Account_Image">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Role_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Account_Role" Type="NicePhotosModel.Store.Account_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Account_Role">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Role_Role">
+          <End Role="Role" Type="NicePhotosModel.Store.Role" Multiplicity="1" />
+          <End Role="Account_Role" Type="NicePhotosModel.Store.Account_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Account_Role">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Album" Type="NicePhotosModel.Store.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="Owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_AvailabilityType">
+          <End Role="AvailabilityType" Type="NicePhotosModel.Store.AvailabilityType" Multiplicity="1" />
+          <End Role="Album" Type="NicePhotosModel.Store.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvailabilityType">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="Availability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Fiend_Album">
+          <End Role="Album" Type="NicePhotosModel.Store.Album" Multiplicity="1" />
+          <End Role="Album_Fiend" Type="NicePhotosModel.Store.Album_Fiend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Album_Fiend">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Fiend_Album_Fiend">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Album_Fiend" Type="NicePhotosModel.Store.Album_Fiend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Album_Fiend">
+              <PropertyRef Name="FriendAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="0..1" />
+          <End Role="Comment" Type="NicePhotosModel.Store.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Album">
+          <End Role="Album" Type="NicePhotosModel.Store.Album" Multiplicity="1" />
+          <End Role="Comment" Type="NicePhotosModel.Store.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friend_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Friend" Type="NicePhotosModel.Store.Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friend">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friend_Account1">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="Friend" Type="NicePhotosModel.Store.Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friend">
+              <PropertyRef Name="Friend" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_Album">
+          <End Role="Album" Type="NicePhotosModel.Store.Album" Multiplicity="1" />
+          <End Role="Image" Type="NicePhotosModel.Store.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageReport_Account">
+          <End Role="Account" Type="NicePhotosModel.Store.Account" Multiplicity="1" />
+          <End Role="ImageReport" Type="NicePhotosModel.Store.ImageReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="ImageReport">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageReport_Image">
+          <End Role="Image" Type="NicePhotosModel.Store.Image" Multiplicity="1" />
+          <End Role="ImageReport" Type="NicePhotosModel.Store.ImageReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="ImageReport">
+              <PropertyRef Name="Image" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceCommision_Account_Image">
+          <End Role="Account_Image" Type="NicePhotosModel.Store.Account_Image" Multiplicity="1" />
+          <End Role="NiceCommision" Type="NicePhotosModel.Store.NiceCommision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account_Image">
+              <PropertyRef Name="AccountImageId" />
+            </Principal>
+            <Dependent Role="NiceCommision">
+              <PropertyRef Name="BuyerRecord" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_MenuItem_MenuItem">
+          <End Role="MenuItem" Type="NicePhotosModel.Store.MenuItem" Multiplicity="1" />
+          <End Role="Role_MenuItem" Type="NicePhotosModel.Store.Role_MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuItem">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Role_MenuItem">
+              <PropertyRef Name="Item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_MenuItem_Role">
+          <End Role="Role" Type="NicePhotosModel.Store.Role" Multiplicity="1" />
+          <End Role="Role_MenuItem" Type="NicePhotosModel.Store.Role_MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Role_MenuItem">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddFriend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Friend" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddRole_MenuItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleId" Type="char" Mode="In" />
+          <Parameter Name="MenuItemId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ChangePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="CreateAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="CreateAlbum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AlbumName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner" Type="varchar" Mode="In" />
+          <Parameter Name="Availability" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DecryptString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hexstring" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="EncryptString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Text" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="fn_EncryptString" ReturnType="varchar(max)" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Text" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_SplitString" ReturnType="nvarchar(max)" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="str" Type="varchar(max)" Mode="In" />
+          <Parameter Name="length" Type="int" Mode="In" />
+          <Parameter Name="seperator" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="LogIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SendEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="Subject" Type="varchar" Mode="In" />
+          <Parameter Name="Body" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SendForgotPasswordRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SetAccountVerified" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VerificationCode" Type="varchar" Mode="In" />
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="PrivateKey" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NicePhotosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NicePhotosEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="AddFriend">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Friend" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ChangePassword">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="LogIn" EntitySet="Accounts" ReturnType="Collection(NicePhotosModel.Account)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DecryptString" ReturnType="Collection(String)">
+          <Parameter Name="hexstring" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EncryptString" ReturnType="Collection(String)">
+          <Parameter Name="Text" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SendForgotPasswordRequest">
+          <Parameter Name="Username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateAccount">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateAlbum" ReturnType="Collection(Guid)">
+            <Parameter Name="AlbumName" Mode="In" Type="String" />
+            <Parameter Name="Owner" Mode="In" Type="String" />
+            <Parameter Name="Availability" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SetAccountVerified">
+            <Parameter Name="VerificationCode" Mode="In" Type="String" />
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="PrivateKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Accounts" EntityType="NicePhotosModel.Account" />
+          <EntitySet Name="Account_Image" EntityType="NicePhotosModel.Account_Image" />
+          <EntitySet Name="Account_Role" EntityType="NicePhotosModel.Account_Role" />
+          <EntitySet Name="Albums" EntityType="NicePhotosModel.Album" />
+          <EntitySet Name="Album_Fiend" EntityType="NicePhotosModel.Album_Fiend" />
+          <EntitySet Name="AvailabilityTypes" EntityType="NicePhotosModel.AvailabilityType" />
+          <EntitySet Name="Comments" EntityType="NicePhotosModel.Comment" />
+          <EntitySet Name="Friends" EntityType="NicePhotosModel.Friend" />
+          <EntitySet Name="Images" EntityType="NicePhotosModel.Image" />
+          <EntitySet Name="ImageReports" EntityType="NicePhotosModel.ImageReport" />
+          <EntitySet Name="Logs" EntityType="NicePhotosModel.Log" />
+          <EntitySet Name="MenuItems" EntityType="NicePhotosModel.MenuItem" />
+          <EntitySet Name="NiceCommisions" EntityType="NicePhotosModel.NiceCommision" />
+          <EntitySet Name="Roles" EntityType="NicePhotosModel.Role" />
+          <EntitySet Name="Role_MenuItem" EntityType="NicePhotosModel.Role_MenuItem" />
+          <AssociationSet Name="FK_Account_Image_Account" Association="NicePhotosModel.FK_Account_Image_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Account_Image" EntitySet="Account_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Role_Account" Association="NicePhotosModel.FK_Account_Role_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Account_Role" EntitySet="Account_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Account" Association="NicePhotosModel.FK_Album_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Album" EntitySet="Albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Fiend_Album_Fiend" Association="NicePhotosModel.FK_Album_Fiend_Album_Fiend">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Album_Fiend" EntitySet="Album_Fiend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Account" Association="NicePhotosModel.FK_Comment_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friend_Account" Association="NicePhotosModel.FK_Friend_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Friend" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Friend_Account1" Association="NicePhotosModel.FK_Friend_Account1">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Friend" EntitySet="Friends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageReport_Account" Association="NicePhotosModel.FK_ImageReport_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="ImageReport" EntitySet="ImageReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Image_Image" Association="NicePhotosModel.FK_Account_Image_Image">
+            <End Role="Image" EntitySet="Images" />
+            <End Role="Account_Image" EntitySet="Account_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceCommision_Account_Image" Association="NicePhotosModel.FK_NiceCommision_Account_Image">
+            <End Role="Account_Image" EntitySet="Account_Image" />
+            <End Role="NiceCommision" EntitySet="NiceCommisions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Role_Role" Association="NicePhotosModel.FK_Account_Role_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Account_Role" EntitySet="Account_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_AvailabilityType" Association="NicePhotosModel.FK_Album_AvailabilityType">
+            <End Role="AvailabilityType" EntitySet="AvailabilityTypes" />
+            <End Role="Album" EntitySet="Albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Fiend_Album" Association="NicePhotosModel.FK_Album_Fiend_Album">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Album_Fiend" EntitySet="Album_Fiend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Album" Association="NicePhotosModel.FK_Comment_Album">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Image_Album" Association="NicePhotosModel.FK_Image_Album">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageReport_Image" Association="NicePhotosModel.FK_ImageReport_Image">
+            <End Role="Image" EntitySet="Images" />
+            <End Role="ImageReport" EntitySet="ImageReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_MenuItem_MenuItem" Association="NicePhotosModel.FK_Role_MenuItem_MenuItem">
+            <End Role="MenuItem" EntitySet="MenuItems" />
+            <End Role="Role_MenuItem" EntitySet="Role_MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_MenuItem_Role" Association="NicePhotosModel.FK_Role_MenuItem_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Role_MenuItem" EntitySet="Role_MenuItem" />
+          </AssociationSet>
+          <FunctionImport Name="SendEmail">
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="Subject" Mode="In" Type="String" />
+            <Parameter Name="Body" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddRole_MenuItem">
+            <Parameter Name="RoleId" Mode="In" Type="String" />
+            <Parameter Name="MenuItemId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Credits" Nullable="false" />
+          <Property Type="String" Name="VerificationCode" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Surname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AboutMe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrivateKey" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account_Image" Relationship="NicePhotosModel.FK_Account_Image_Account" FromRole="Account" ToRole="Account_Image" />
+          <NavigationProperty Name="Account_Role" Relationship="NicePhotosModel.FK_Account_Role_Account" FromRole="Account" ToRole="Account_Role" />
+          <NavigationProperty Name="Albums" Relationship="NicePhotosModel.FK_Album_Account" FromRole="Account" ToRole="Album" />
+          <NavigationProperty Name="Album_Fiend" Relationship="NicePhotosModel.FK_Album_Fiend_Album_Fiend" FromRole="Account" ToRole="Album_Fiend" />
+          <NavigationProperty Name="Comments" Relationship="NicePhotosModel.FK_Comment_Account" FromRole="Account" ToRole="Comment" />
+          <NavigationProperty Name="Friends" Relationship="NicePhotosModel.FK_Friend_Account" FromRole="Account" ToRole="Friend" />
+          <NavigationProperty Name="Friends1" Relationship="NicePhotosModel.FK_Friend_Account1" FromRole="Account" ToRole="Friend" />
+          <NavigationProperty Name="ImageReports" Relationship="NicePhotosModel.FK_ImageReport_Account" FromRole="Account" ToRole="ImageReport" />
+          <Property Type="Guid" Name="ApiKey" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account_Image">
+          <Key>
+            <PropertyRef Name="AccountImageId" />
+          </Key>
+          <Property Type="Guid" Name="AccountImageId" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="ImageId" Nullable="false" />
+          <Property Type="Int32" Name="Cost" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Account_Image_Account" FromRole="Account_Image" ToRole="Account" />
+          <NavigationProperty Name="Image" Relationship="NicePhotosModel.FK_Account_Image_Image" FromRole="Account_Image" ToRole="Image" />
+          <NavigationProperty Name="NiceCommisions" Relationship="NicePhotosModel.FK_NiceCommision_Account_Image" FromRole="Account_Image" ToRole="NiceCommision" />
+        </EntityType>
+        <EntityType Name="Account_Role">
+          <Key>
+            <PropertyRef Name="AccountRoleId" />
+          </Key>
+          <Property Type="String" Name="RoleId" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="AccountRoleId" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Account_Role_Account" FromRole="Account_Role" ToRole="Account" />
+          <NavigationProperty Name="Role" Relationship="NicePhotosModel.FK_Account_Role_Role" FromRole="Account_Role" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Type="Guid" Name="AlbumId" Nullable="false" />
+          <Property Type="String" Name="AlbumName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Availability" Nullable="false" />
+          <Property Type="Boolean" Name="Removed" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Album_Account" FromRole="Album" ToRole="Account" />
+          <NavigationProperty Name="AvailabilityType" Relationship="NicePhotosModel.FK_Album_AvailabilityType" FromRole="Album" ToRole="AvailabilityType" />
+          <NavigationProperty Name="Album_Fiend" Relationship="NicePhotosModel.FK_Album_Fiend_Album" FromRole="Album" ToRole="Album_Fiend" />
+          <NavigationProperty Name="Comments" Relationship="NicePhotosModel.FK_Comment_Album" FromRole="Album" ToRole="Comment" />
+          <NavigationProperty Name="Images" Relationship="NicePhotosModel.FK_Image_Album" FromRole="Album" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Album_Fiend">
+          <Key>
+            <PropertyRef Name="AlbumFriendId" />
+          </Key>
+          <Property Type="Guid" Name="AlbumFriendId" Nullable="false" />
+          <Property Type="Guid" Name="AlbumId" Nullable="false" />
+          <Property Type="String" Name="FriendAccount" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Album_Fiend_Album_Fiend" FromRole="Album_Fiend" ToRole="Account" />
+          <NavigationProperty Name="Album" Relationship="NicePhotosModel.FK_Album_Fiend_Album" FromRole="Album_Fiend" ToRole="Album" />
+        </EntityType>
+        <EntityType Name="AvailabilityType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Type="Int32" Name="TypeId" Nullable="false" />
+          <Property Type="String" Name="TypeName" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Albums" Relationship="NicePhotosModel.FK_Album_AvailabilityType" FromRole="AvailabilityType" ToRole="Album" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Type="Guid" Name="CommentId" Nullable="false" />
+          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Comment1" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="Album" Nullable="false" />
+          <Property Type="String" Name="Username" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Flagged" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Comment_Account" FromRole="Comment" ToRole="Account" />
+          <NavigationProperty Name="Album1" Relationship="NicePhotosModel.FK_Comment_Album" FromRole="Comment" ToRole="Album" />
+        </EntityType>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Type="Guid" Name="FriendId" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Friend1" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_Friend_Account" FromRole="Friend" ToRole="Account" />
+          <NavigationProperty Name="Account1" Relationship="NicePhotosModel.FK_Friend_Account1" FromRole="Friend" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Type="Guid" Name="ImageId" Nullable="false" />
+          <Property Type="Guid" Name="Album" Nullable="false" />
+          <Property Type="String" Name="ImageName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageDescruption" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Cost" Nullable="false" />
+          <Property Type="Boolean" Name="Removed" Nullable="false" />
+          <Property Type="String" Name="FileExtension" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DigitalSignature" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account_Image" Relationship="NicePhotosModel.FK_Account_Image_Image" FromRole="Image" ToRole="Account_Image" />
+          <NavigationProperty Name="Album1" Relationship="NicePhotosModel.FK_Image_Album" FromRole="Image" ToRole="Album" />
+          <NavigationProperty Name="ImageReports" Relationship="NicePhotosModel.FK_ImageReport_Image" FromRole="Image" ToRole="ImageReport" />
+        </EntityType>
+        <EntityType Name="ImageReport">
+          <Key>
+            <PropertyRef Name="ImageReportId" />
+          </Key>
+          <Property Type="Guid" Name="ImageReportId" Nullable="false" />
+          <Property Type="Guid" Name="Image" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Account" Relationship="NicePhotosModel.FK_ImageReport_Account" FromRole="ImageReport" ToRole="Account" />
+          <NavigationProperty Name="Image1" Relationship="NicePhotosModel.FK_ImageReport_Image" FromRole="ImageReport" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Type="Guid" Name="LogId" Nullable="false" />
+          <Property Type="String" Name="Details" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
+          <Property Type="String" Name="DetailsBeforeModification" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MenuItem">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Type="Int32" Name="ItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ItemName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemLink" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role_MenuItem" Relationship="NicePhotosModel.FK_Role_MenuItem_MenuItem" FromRole="MenuItem" ToRole="Role_MenuItem" />
+        </EntityType>
+        <EntityType Name="NiceCommision">
+          <Key>
+            <PropertyRef Name="NiceCommisionId" />
+          </Key>
+          <Property Type="Guid" Name="NiceCommisionId" Nullable="false" />
+          <Property Type="Guid" Name="BuyerRecord" Nullable="false" />
+          <Property Type="Int32" Name="Commision" Nullable="false" />
+          <NavigationProperty Name="Account_Image" Relationship="NicePhotosModel.FK_NiceCommision_Account_Image" FromRole="NiceCommision" ToRole="Account_Image" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="String" Name="RoleId" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Account_Role" Relationship="NicePhotosModel.FK_Account_Role_Role" FromRole="Role" ToRole="Account_Role" />
+          <NavigationProperty Name="Role_MenuItem" Relationship="NicePhotosModel.FK_Role_MenuItem_Role" FromRole="Role" ToRole="Role_MenuItem" />
+        </EntityType>
+        <EntityType Name="Role_MenuItem">
+          <Key>
+            <PropertyRef Name="RoleItemId" />
+          </Key>
+          <Property Type="Int32" Name="RoleItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Role" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="Item" Nullable="false" />
+          <NavigationProperty Name="MenuItem" Relationship="NicePhotosModel.FK_Role_MenuItem_MenuItem" FromRole="Role_MenuItem" ToRole="MenuItem" />
+          <NavigationProperty Name="Role1" Relationship="NicePhotosModel.FK_Role_MenuItem_Role" FromRole="Role_MenuItem" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Account_Image_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Account_Image" Role="Account_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Account_Image">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Role_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Account_Role" Role="Account_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Account_Role">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Album" Role="Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="Owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Fiend_Album_Fiend">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Album_Fiend" Role="Album_Fiend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Album_Fiend">
+              <PropertyRef Name="FriendAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="NicePhotosModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friend_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Friend" Role="Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friend">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Friend_Account1">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.Friend" Role="Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Friend">
+              <PropertyRef Name="Friend1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageReport_Account">
+          <End Type="NicePhotosModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="NicePhotosModel.ImageReport" Role="ImageReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="ImageReport">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Image_Image">
+          <End Type="NicePhotosModel.Image" Role="Image" Multiplicity="1" />
+          <End Type="NicePhotosModel.Account_Image" Role="Account_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="Account_Image">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceCommision_Account_Image">
+          <End Type="NicePhotosModel.Account_Image" Role="Account_Image" Multiplicity="1" />
+          <End Type="NicePhotosModel.NiceCommision" Role="NiceCommision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account_Image">
+              <PropertyRef Name="AccountImageId" />
+            </Principal>
+            <Dependent Role="NiceCommision">
+              <PropertyRef Name="BuyerRecord" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Role_Role">
+          <End Type="NicePhotosModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="NicePhotosModel.Account_Role" Role="Account_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Account_Role">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_AvailabilityType">
+          <End Type="NicePhotosModel.AvailabilityType" Role="AvailabilityType" Multiplicity="1" />
+          <End Type="NicePhotosModel.Album" Role="Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AvailabilityType">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="Availability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Fiend_Album">
+          <End Type="NicePhotosModel.Album" Role="Album" Multiplicity="1" />
+          <End Type="NicePhotosModel.Album_Fiend" Role="Album_Fiend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Album_Fiend">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Album">
+          <End Type="NicePhotosModel.Album" Role="Album" Multiplicity="1" />
+          <End Type="NicePhotosModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Image_Album">
+          <End Type="NicePhotosModel.Album" Role="Album" Multiplicity="1" />
+          <End Type="NicePhotosModel.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageReport_Image">
+          <End Type="NicePhotosModel.Image" Role="Image" Multiplicity="1" />
+          <End Type="NicePhotosModel.ImageReport" Role="ImageReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="ImageReport">
+              <PropertyRef Name="Image" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_MenuItem_MenuItem">
+          <End Type="NicePhotosModel.MenuItem" Role="MenuItem" Multiplicity="1" />
+          <End Type="NicePhotosModel.Role_MenuItem" Role="Role_MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuItem">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Role_MenuItem">
+              <PropertyRef Name="Item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_MenuItem_Role">
+          <End Type="NicePhotosModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="NicePhotosModel.Role_MenuItem" Role="Role_MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Role_MenuItem">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NicePhotosModelStoreContainer" CdmEntityContainer="NicePhotosEntities">
+          <FunctionImportMapping FunctionImportName="AddFriend" FunctionName="NicePhotosModel.Store.AddFriend" />
+          <FunctionImportMapping FunctionImportName="ChangePassword" FunctionName="NicePhotosModel.Store.ChangePassword" />
+          <FunctionImportMapping FunctionImportName="LogIn" FunctionName="NicePhotosModel.Store.LogIn" />
+          <FunctionImportMapping FunctionImportName="DecryptString" FunctionName="NicePhotosModel.Store.DecryptString" />
+          <FunctionImportMapping FunctionImportName="EncryptString" FunctionName="NicePhotosModel.Store.EncryptString" />
+          <FunctionImportMapping FunctionImportName="SendForgotPasswordRequest" FunctionName="NicePhotosModel.Store.SendForgotPasswordRequest" />
+          <FunctionImportMapping FunctionImportName="CreateAccount" FunctionName="NicePhotosModel.Store.CreateAccount" />
+          <FunctionImportMapping FunctionImportName="CreateAlbum" FunctionName="NicePhotosModel.Store.CreateAlbum" />
+          <FunctionImportMapping FunctionImportName="SetAccountVerified" FunctionName="NicePhotosModel.Store.SetAccountVerified" />
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="NicePhotosModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+                <ScalarProperty Name="AboutMe" ColumnName="AboutMe" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+                <ScalarProperty Name="Credits" ColumnName="Credits" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Account_Image">
+            <EntityTypeMapping TypeName="NicePhotosModel.Account_Image">
+              <MappingFragment StoreEntitySet="Account_Image">
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="AccountImageId" ColumnName="AccountImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Account_Role">
+            <EntityTypeMapping TypeName="NicePhotosModel.Account_Role">
+              <MappingFragment StoreEntitySet="Account_Role">
+                <ScalarProperty Name="AccountRoleId" ColumnName="AccountRoleId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Albums">
+            <EntityTypeMapping TypeName="NicePhotosModel.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="Removed" ColumnName="Removed" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Album_Fiend">
+            <EntityTypeMapping TypeName="NicePhotosModel.Album_Fiend">
+              <MappingFragment StoreEntitySet="Album_Fiend">
+                <ScalarProperty Name="FriendAccount" ColumnName="FriendAccount" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+                <ScalarProperty Name="AlbumFriendId" ColumnName="AlbumFriendId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvailabilityTypes">
+            <EntityTypeMapping TypeName="NicePhotosModel.AvailabilityType">
+              <MappingFragment StoreEntitySet="AvailabilityType">
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="NicePhotosModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Flagged" ColumnName="Flagged" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Friends">
+            <EntityTypeMapping TypeName="NicePhotosModel.Friend">
+              <MappingFragment StoreEntitySet="Friend">
+                <ScalarProperty Name="Friend1" ColumnName="Friend" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="NicePhotosModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="DigitalSignature" ColumnName="DigitalSignature" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="Removed" ColumnName="Removed" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="ImageDescruption" ColumnName="ImageDescruption" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageReports">
+            <EntityTypeMapping TypeName="NicePhotosModel.ImageReport">
+              <MappingFragment StoreEntitySet="ImageReport">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ImageReportId" ColumnName="ImageReportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="NicePhotosModel.Log">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="DetailsBeforeModification" ColumnName="DetailsBeforeModification" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuItems">
+            <EntityTypeMapping TypeName="NicePhotosModel.MenuItem">
+              <MappingFragment StoreEntitySet="MenuItem">
+                <ScalarProperty Name="ItemLink" ColumnName="ItemLink" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NiceCommisions">
+            <EntityTypeMapping TypeName="NicePhotosModel.NiceCommision">
+              <MappingFragment StoreEntitySet="NiceCommision">
+                <ScalarProperty Name="Commision" ColumnName="Commision" />
+                <ScalarProperty Name="BuyerRecord" ColumnName="BuyerRecord" />
+                <ScalarProperty Name="NiceCommisionId" ColumnName="NiceCommisionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="NicePhotosModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_MenuItem">
+            <EntityTypeMapping TypeName="NicePhotosModel.Role_MenuItem">
+              <MappingFragment StoreEntitySet="Role_MenuItem">
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="RoleItemId" ColumnName="RoleItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SendEmail" FunctionName="NicePhotosModel.Store.SendEmail" />
+          <FunctionImportMapping FunctionImportName="AddRole_MenuItem" FunctionName="NicePhotosModel.Store.AddRole_MenuItem" />
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NicePhotosModel">
+        <EntityTypeShape EntityType="NicePhotosModel.Account" Width="1.5" PointX="0.75" PointY="8.5" Height="4.2879036458333388" />
+        <EntityTypeShape EntityType="NicePhotosModel.Account_Image" Width="1.5" PointX="3" PointY="9.5" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="NicePhotosModel.Account_Role" Width="1.5" PointX="3" PointY="6.625" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="NicePhotosModel.Album" Width="1.5" PointX="6" PointY="9.125" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="NicePhotosModel.Album_Fiend" Width="1.5" PointX="8.25" PointY="9.625" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="NicePhotosModel.AvailabilityType" Width="1.5" PointX="3.75" PointY="3.875" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="NicePhotosModel.Comment" Width="1.5" PointX="8.25" PointY="6.375" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="NicePhotosModel.Friend" Width="1.5" PointX="3" PointY="19.375" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="NicePhotosModel.Image" Width="1.5" PointX="8.25" PointY="15.125" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="NicePhotosModel.ImageReport" Width="1.5" PointX="10.5" PointY="12.375" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="NicePhotosModel.Log" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="NicePhotosModel.MenuItem" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="NicePhotosModel.NiceCommision" Width="1.5" PointX="5.25" PointY="13.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="NicePhotosModel.Role" Width="1.5" PointX="0.75" PointY="5.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="NicePhotosModel.Role_MenuItem" Width="1.5" PointX="6" PointY="5.625" Height="1.9802864583333388" />
+        <AssociationConnector Association="NicePhotosModel.FK_Account_Image_Account" >
+          <ConnectorPoint PointX="2.25" PointY="10.682444661458334" />
+          <ConnectorPoint PointX="3" PointY="10.682444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Account_Role_Account" >
+          <ConnectorPoint PointX="2.25" PointY="8.5011528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="8.1261528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="8.9814393044871856" />
+          <ConnectorPoint PointX="3.0011528461538459" PointY="8.6052864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Album_Account" >
+          <ConnectorPoint PointX="2.25" PointY="9.28125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="9.28125" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="9.28125" />
+          <ConnectorPoint PointX="6" PointY="9.28125" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Album_Fiend_Album_Fiend" >
+          <ConnectorPoint PointX="2.25" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="9" PointY="12.458598632812503" />
+          <ConnectorPoint PointX="9" PointY="11.605286458333339" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Comment_Account" >
+          <ConnectorPoint PointX="2.25" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="2.7231173643830138" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="2.8897840310496807" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="8.7999886067708388" />
+          <ConnectorPoint PointX="8.25" PointY="8.7999886067708388" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Friend_Account" >
+          <ConnectorPoint PointX="1.5" PointY="12.787903645833339" />
+          <ConnectorPoint PointX="1.5" PointY="20.365143229166669" />
+          <ConnectorPoint PointX="3" PointY="20.365143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Friend_Account1" >
+          <ConnectorPoint PointX="1.9062525" PointY="12.787903645833339" />
+          <ConnectorPoint PointX="1.9062525" PointY="19.838819114583341" />
+          <ConnectorPoint PointX="3" PointY="19.838819114583341" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_ImageReport_Account" >
+          <ConnectorPoint PointX="2.25" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="12.685751139322921" />
+          <ConnectorPoint PointX="10.5" PointY="12.685751139322921" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Account_Image_Image" >
+          <ConnectorPoint PointX="8.25" PointY="16.929790039062496" />
+          <ConnectorPoint PointX="3.75" PointY="16.929790039062496" />
+          <ConnectorPoint PointX="3.75" PointY="11.864889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_NiceCommision_Account_Image" >
+          <ConnectorPoint PointX="4.1562525" PointY="11.864889322916667" />
+          <ConnectorPoint PointX="4.1562525" PointY="14.643992513020834" />
+          <ConnectorPoint PointX="5.25" PointY="14.643992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Account_Role_Role" >
+          <ConnectorPoint PointX="2.25" PointY="7.0814925130208337" />
+          <ConnectorPoint PointX="3" PointY="7.0814925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Album_AvailabilityType" >
+          <ConnectorPoint PointX="4.90625" PointY="5.470683593749996" />
+          <ConnectorPoint PointX="4.90625" PointY="11.997091471354167" />
+          <ConnectorPoint PointX="6" PointY="11.997091471354167" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Album_Fiend_Album" >
+          <ConnectorPoint PointX="7.5" PointY="10.615143229166669" />
+          <ConnectorPoint PointX="8.25" PointY="10.615143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Comment_Album" >
+          <ConnectorPoint PointX="7.5" PointY="9.1261528461538468" />
+          <ConnectorPoint PointX="7.875" PointY="8.7511528461538468" />
+          <ConnectorPoint PointX="7.875" PointY="9.3071907552083388" />
+          <ConnectorPoint PointX="8.25" PointY="8.9321907552083388" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Image_Album" >
+          <ConnectorPoint PointX="7.15625" PointY="12.066793619791667" />
+          <ConnectorPoint PointX="7.15625" PointY="16.233885032552088" />
+          <ConnectorPoint PointX="8.25" PointY="16.233885032552088" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_ImageReport_Image" >
+          <ConnectorPoint PointX="9.375" PointY="15.125" />
+          <ConnectorPoint PointX="9.375" PointY="13.551771298828124" />
+          <ConnectorPoint PointX="10.5" PointY="13.551771298828124" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Role_MenuItem_MenuItem" >
+          <ConnectorPoint PointX="5.25" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="6.75" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="6.75" PointY="5.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="NicePhotosModel.FK_Role_MenuItem_Role" >
+          <ConnectorPoint PointX="2.25" PointY="6.15625" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="6.1562499999999991" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="6.15625" />
+          <ConnectorPoint PointX="6" PointY="6.15625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
